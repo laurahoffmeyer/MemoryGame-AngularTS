@@ -1,0 +1,27 @@
+@import "../../../../../variables.less";
+
+.multi-player-tracker {
+    max-width: 800px;
+
+    p {
+        font-size: @large;
+    }
+
+    .player-stat {
+        padding: 0px 30px;
+        border-radius: 15px;
+    }
+    .non-active {
+        background-color: @light-blue;
+    }
+    .active {
+        background-color: @orange;
+
+        p {
+            color: @white;
+        }
+        h4 {
+            color: @white;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import "../../../../../variables.less";
+
+header {
+    h1 {
+        font-size: @x-large;
+    }
+    button {
+        font-size: @medium;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+    .desktop-menu {
+        display: none;
+        
+        button:last-child {
+            margin-left: 15px;
+            background-color: @light-blue;
+            color: @dark-blue;
+        }
+        button:last-child:hover {
+            background-color: @medium-blue;
+            color: @white;
+        }
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    header {
+        .mobile-menu {
+            display: none;
+        }
+        .desktop-menu {
+            display: block;
+        }    
+    }
+}

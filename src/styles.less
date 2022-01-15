@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@import "./variables.less";
+
+.flex {
+    display: flex;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.row {
+    flex-direction: row;
+}
+.col {
+    flex-direction: column;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-right {
+    justify-content: flex-end;
+}
+.justify-left {
+    justify-content: flex-start;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.align-center {
+    align-items: center;
+}
+.align-end {
+    align-items: flex-end;
+}
+.align-start {
+    align-items: flex-start;
+}
+.orange-button {
+    background-color: @orange;
+    color: @white;
+}
+.orange-button:hover {
+    background-color: @orange-hover;
+}
+.two-col {
+    width: 46%;
+    margin: 2%;
+}
+.three-col {
+    width: 29%;
+    margin: 2%;
+}
+.four-col {
+    width: 22%;
+    margin: 1.5%;
+
+    fa-icon {
+        font-size: @xx-large;
+    }
+}
+.six-col {
+    width: 14%;
+    margin: 1%;
+
+    fa-icon {
+        font-size: @x-large;
+    }
+}
+.w-100 {
+    width: 100%;
+}
+.background-color-transition {
+    transition: background-color 500ms, color 2s;
+    -webkit-transition: background-color 500ms, color 2s;
+    -moz-transition: background-color 500ms, color 2s;
+    -ms-transition: background-color 500ms, color 2s;
+    -o-transition: background-color 500ms, color 2s;  
+}
+
+html {
+    margin: 0px auto;
+    padding: 0px;
+}
+body {
+    font-family: @Atkinson-font;
+    font-weight: 700;
+    font-size: 12px;
+    color: @dark-blue;
+}
+section:not(.no-margin) {
+    margin: 30px 0px;
+}
+button {
+    padding: 10px 25px;
+    color: @white;
+    border: none;
+    border-radius: 25px;
+    font-family: @Atkinson-font;
+    font-weight: 700;
+}
+button:hover {
+    cursor: pointer;
+}
+h4 {
+    font-size: @regular;
+    color: @dark-medium-blue;
+}
+
+@import "./app/app.component.less";
+@import "./app/modules/gameplay/components/header/header.component.less";
+@import "./app/modules/gamesetup/components/options/options.component.less";
+@import "./app/modules/gameplay/components/gameboard/gameboard.component.less";

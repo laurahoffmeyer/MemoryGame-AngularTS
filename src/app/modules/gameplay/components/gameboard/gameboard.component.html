@@ -1,0 +1,8 @@
+<app-header></app-header>
+<app-icons [grid]="gameData.settings.grid"></app-icons>
+<app-singleplayertracker [moves]="gameData.players[0].moves" *ngIf="!gameData.isMultiplayer(); else multi"></app-singleplayertracker>
+<ng-template #multi>
+    <app-multiplayertracker [players]="gameData.players" [currentPlayer]="gameData.currentPlayer"></app-multiplayertracker>
+</ng-template>
+
+<app-endgamereview *ngIf="gameData.gameOver"></app-endgamereview>

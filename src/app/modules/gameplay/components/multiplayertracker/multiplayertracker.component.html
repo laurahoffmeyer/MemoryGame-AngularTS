@@ -1,0 +1,14 @@
+<section class="flex justify-center">
+    <div class="flex multi-player-tracker w-100 justify-around align-center">
+        <div *ngFor="let player of players"
+        [ngClass]="{'two-col' : players.length === 2,
+        'three-col' : players.length === 3,
+        'four-col' : players.length === 4,
+        'flex justify-between align-center player-stat background-color-transition' : true,
+        'active' : player === currentPlayer,
+        'non-active' : player != currentPlayer}">
+            <h4>Player {{player.order}}</h4>
+            <p>{{player.matches}}</p>
+        </div>
+    </div>
+</section>

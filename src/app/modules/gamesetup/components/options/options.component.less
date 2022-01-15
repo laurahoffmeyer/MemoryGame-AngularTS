@@ -1,0 +1,54 @@
+@import "../../../../../variables.less";
+
+.options-overlay {
+    height: 100vh;
+    background-color: @dark-blue;
+    z-index: 99999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    h1 {
+        color: @white;
+        font-size: @xx-large;
+    }
+    h2 {
+        margin-top: 40px;
+        color: @dark-medium-blue;
+    }    
+}
+.options-box {
+    background-color: @white;
+    width: 80%;
+    max-width: 654px;
+    padding: 0px 35px 35px;
+    border-radius: 10px;
+
+    button {
+        width: 100%;
+    }
+    button:not(.orange-button) {
+        font-size: @large;
+    }
+    button:not(.selected, .orange-button) {
+        color: @dark-blue;
+    }
+    button:hover:not(.selected, .orange-button) {
+        background-color: @medium-blue;
+        color: @white;
+    }
+    button:not(.orange-button, :last-child) {
+        margin-right: 15px;
+    }
+
+    .selected {
+        background-color: @dark-blue;
+        color: @white;
+    }
+    .orange-button {
+        margin-top: 40px;
+        padding: 20px 0px;
+        font-size: @medium;
+    }
+}

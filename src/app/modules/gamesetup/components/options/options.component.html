@@ -1,0 +1,22 @@
+<section class="no-margin options-overlay flex col align-center justify-center">
+    <h1>memory</h1>
+    <div class="options-box">
+        <h2>Number of Players</h2>
+        <div class="flex justify-between">
+            <button *ngFor="let player of playerSettings" 
+            [ngClass]="{'selected' : settings.playerCount == player}" 
+            (click)="settings.playerCount = player">
+                {{player}}
+            </button>
+        </div>
+        <h2>Grid Size</h2>
+        <div class="flex justify-between">
+            <button *ngFor="let grid of GridSettings" 
+            [ngClass]="{'selected' : settings.grid == grid.number}" 
+            (click)="settings.grid = grid.number">
+                {{grid.display}}
+            </button>
+        </div>
+        <button class="orange-button" routerLink="/play" [state]="{playerCount: settings.playerCount, grid: settings.grid}">Start Game</button>
+    </div>
+</section>

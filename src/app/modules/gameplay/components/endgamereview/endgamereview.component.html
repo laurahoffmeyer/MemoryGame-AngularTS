@@ -1,0 +1,41 @@
+<section class="no-margin game-review-overlay flex col align-center justify-center">
+    <div class="options-box">
+        <div class="players-box" *ngIf="gameData.isMultiplayer(); else singleResults">
+            <h2 *ngIf="gameData.winners.length === 1; else multiWinners">
+                Player {{gameData.winners[0].order}} Wins!
+            </h2>
+            <ng-template #multiWinners>
+                <h2 #multiWinners>Players 
+                    <span [ngClass]="{'comma' : i != gameData.winners.length - 1 && i != 0, 'and-comma'
+                    : i === gameData.winners.length - 1}"
+                    *ngFor="let player of gameData.winners; let i = index">{{player.order}}
+                    </span>Won!
+                </h2>
+            </ng-template>
+            <h4><small>Game over! Here are the results ...</small></h4>
+            <div [ngClass]="{'blue-bg' : PlayerIsWinner(player.order),
+            'light-blue-bg' : !PlayerIsWinner(player.order),
+            'flex justify-between align-center' : true}" 
+            *ngFor="let player of gameData.players">
+                <div>Player {{player.order}} <span *ngIf="PlayerIsWinner(player.order)">(Winner!)</span></div>
+                <div class="large-text">{{player.matches}} Pairs</div>
+            </div>
+        </div>
+        <ng-template #singleResults>
+            <div class="players-box">
+                <h2>You did it!</h2>
+                <h4><small>Game over! Here are your results ...</small></h4>
+                <div class="flex justify-between align-center light-blue-bg">
+                    <div>Time Elapsed</div>
+                    <div class="large-text">{{formattedTime}}</div>
+                </div>
+                <div class="flex justify-between align-center light-blue-bg">
+                    <div>Moves Taken</div>
+                    <div class="large-text">{{gameData.players[0].moves}}</div>
+                </div>
+            </div>
+        </ng-template>
+        <button class="orange-button" (click)="ResetGame()">Restart</button>
+        <button (click)="NewGame()" routerLink="/">New Game</button>
+    </div>
+</section>

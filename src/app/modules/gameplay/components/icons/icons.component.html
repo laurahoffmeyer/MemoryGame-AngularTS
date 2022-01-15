@@ -1,0 +1,17 @@
+<section class="flex justify-center">
+    <div class="flex icons-container justify-between flex-wrap">
+        <div *ngFor="let icon of iconLibrary; let i = index"
+        [ngClass]="{'four-col' : grid === 4,
+        'six-col' : grid === 6,
+        'flex justify-center align-center height-fix' : true}"
+        (click)="TakeTurn(i)">
+            <div [ngClass]="{'circle-fix' : !ShowIcon(i), 
+            'circle flex justify-center align-center background-color-transition' : true,
+            'matched' : IsInMatchedArray(i),
+            'current-guess' : IsCurrentGuess(i)}">
+                <fa-icon @iconTransition *ngIf="ShowIcon(i)"
+                [icon]="icon.iconProp"></fa-icon>
+            </div>
+        </div>
+    </div>
+</section>

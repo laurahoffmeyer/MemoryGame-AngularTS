@@ -1,0 +1,65 @@
+@import "../../../../../variables.less";
+
+.game-review-overlay {
+    height: 100vh;
+    background-color: @dark-blue-transparent;
+    z-index: 99999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    h2 {
+        margin-top: 40px;
+        color: @dark-blue;
+        font-size: @large;
+    }
+    h2, h4 {
+        text-align: center;
+    }
+
+    .comma:before {
+        content: ', ';
+        display: inline;
+    }
+    .and-comma:before {
+        content: ', and ';
+        display: inline;
+    }
+}
+.options-box {
+    background-color: @white;
+    width: 80%;
+    max-width: 654px;
+    padding: 0px 35px 35px;
+    border-radius: 10px;
+
+    button {
+        width: 100%;
+    }
+    button:last-child {
+        margin-top: 20px;
+        background-color: @light-blue;
+        color: @dark-blue;
+    }
+    button:last-child:hover {
+        background-color: @medium-blue;
+        color: @white;
+    }
+
+    .players-box > div {
+        margin: 10px 0px;
+        padding: 15px 20px;
+        border-radius: 5px;
+    }
+    .blue-bg {
+        background-color: @dark-blue;
+        color: @white;
+    }
+    .light-blue-bg {
+        background-color: @light-blue;
+    }
+    .large-text {
+        font-size: @medium;
+    }
+}
