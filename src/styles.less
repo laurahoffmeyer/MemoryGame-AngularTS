@@ -51,11 +51,11 @@
     background-color: @orange-hover;
 }
 .two-col {
-    width: 46%;
+    width: 85%;
     margin: 2%;
 }
 .three-col {
-    width: 29%;
+    width: 85%;
     margin: 2%;
 }
 .four-col {
@@ -112,6 +112,15 @@ button:hover {
 h4 {
     font-size: @regular;
     color: @dark-medium-blue;
+}
+
+@media only screen and (min-width: 700px) {
+    .two-col {
+        width: 46%;
+    }
+    .three-col {
+        width: 29%;
+    }
 }
 
 @import "./app/modules/gamesetup/components/options/options.component.less";
