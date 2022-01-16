@@ -6,8 +6,7 @@ import { Settings } from 'src/app/shared/models/Settings.model';
 
 @Component({
   selector: 'app-gameboard',
-  templateUrl: './gameboard.component.html',
-  styleUrls: ['./gameboard.component.less']
+  templateUrl: './gameboard.component.html'
 })
 export class GameboardComponent implements OnInit {
   constructor(private router: Router, private gameState: GameState) { }
