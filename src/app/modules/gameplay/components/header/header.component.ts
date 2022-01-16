@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit {
 
   public HideMobilePopUpMenu():void {
     this.showMobileMenu = false;
+  }
+
+  public ContinueTimer() {
     this.timer.ContinueTimer();
   }
 

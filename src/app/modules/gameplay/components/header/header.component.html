@@ -8,7 +8,7 @@
                 <button class="orange-button" (click)="ResetGame(); HideMobilePopUpMenu()">Restart</button>
                 <button (click)="NewGame(); HideMobilePopUpMenu()" routerLink="/">New Game</button>
                 <hr class="w-100 opacity-20"/>
-                <button (click)="HideMobilePopUpMenu()">Cancel</button>
+                <button (click)="HideMobilePopUpMenu(); ContinueTimer()">Cancel</button>
             </div>
         </div>
     </div>
