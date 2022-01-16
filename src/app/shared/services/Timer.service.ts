@@ -12,7 +12,8 @@ export class Timer {
   private minutes: number = 0;
   private seconds: string = '';
   private currentTime: number = 0;
-  private timerInterval = 0;
+  private timerInterval: number = 0;
+  private pausedTime: number = 0;
   
   public GetFormattedTime() {
     return this.formattedTime;
@@ -28,6 +29,16 @@ export class Timer {
           (this.minutes+1) + ":00" :
           this.minutes + ":" + (parseInt(this.seconds) < 10 ? "0" : "") + parseInt(this.seconds);
     });
+  }
+
+  public PauseTimer() {
+    this.pausedTime = this.currentTime;
+    this.StopTimer();
+  }
+
+  public ContinueTimer() {
+    this.currentTime = this.pausedTime;
+    this.SetTimer();
   }
   
   public StopTimer() {

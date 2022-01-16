@@ -1,7 +1,16 @@
 <header class="flex justify-around align-center">
     <div><h1>memory</h1></div>
     <div class="mobile-menu">
-        <button class="orange-button">Menu</button>
+        <button (click)="ShowMobilePopUpMenu()" class="orange-button">Menu</button>
+        <div [ngClass]="{'mobile-submenu flex justify-center align-center' : showMobileMenu, 'hide' : !showMobileMenu}">
+            <div class="options-box flex col align-center justify-center">
+                <h2>Menu</h2>
+                <button class="orange-button" (click)="ResetGame(); HideMobilePopUpMenu()">Restart</button>
+                <button (click)="NewGame(); HideMobilePopUpMenu()" routerLink="/">New Game</button>
+                <hr class="w-100 opacity-20"/>
+                <button (click)="HideMobilePopUpMenu()">Cancel</button>
+            </div>
+        </div>
     </div>
     <div class="desktop-menu flex">
         <button class="orange-button" (click)="ResetGame()">Restart</button>

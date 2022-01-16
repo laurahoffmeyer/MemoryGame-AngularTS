@@ -32,7 +32,6 @@ export class GameState {
     this.SetPlayers(settings.playerCount);
     this.SetCurrentPlayer(this.gameData.players[0]);
     this.icons.Setup(settings.grid);
-    console.log(this.gameData.winners);
   };
 
   public NextPlayer(): void {
@@ -47,11 +46,9 @@ export class GameState {
   }
 
   public SortPlayersBasedOnMatches(): void {
-    console.log(this.gameData.players);
     this.gameData.players = this.gameData.players.sort((a, b) => {
       return b.matches - a.matches
     });
-    console.log(this.gameData.players);
   }
 
   public GetGameData(): GameData {

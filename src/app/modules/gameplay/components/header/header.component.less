@@ -11,6 +11,42 @@ header {
     .mobile-menu {
         display: block;
     }
+    .mobile-submenu {
+        height: 100vh;
+        background-color: @dark-blue-transparent;
+        z-index: 99999;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+    
+        .options-box {
+            background-color: @white;
+            width: 60%;
+            padding: 15px 25px 40px;
+            border-radius: 10px;
+        
+            h2 {
+                text-align: center;
+                font-size: @large;
+            }
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            button:not(.orange-button) {
+                background-color: @light-blue;
+                color: @dark-blue;
+            }
+            button:hover:not(.orange-button) {
+                background-color: @medium-blue;
+                color: @white;
+            }
+            button:last-child {
+                margin-top: 20px;
+            }
+        }
+    }
     .desktop-menu {
         display: none;
         
